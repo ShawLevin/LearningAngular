@@ -1,0 +1,43 @@
+<html>
+<head>
+    
+    </head>
+<body>
+    This is main!
+    
+                {{ 2*4 }}
+                
+    
+                {{serviceValue}}
+    
+                <input type='text' ng-model="serviceValue" />
+                <h1>Hello {{data.login}}!</h1>
+                
+                What is your Twitter handle? <input type="text" ng-model="handle">
+                <a href="http://www.twitter.com/{{lowercasehandle()}}" target="_blank">twitter.com/{{lowercasehandle()}}</a>
+                
+                <div class='alert' ng-class="{'alert-warning': handle.length < characters, 'alert-danger': handle.length > characters}" ng-if="handle.length !== characters">
+                Handle must be five characters!</div>
+                
+                <div class='alert alert-success' ng-show="handle.length === characters">
+                Thank you!
+                </div>
+                
+                <input type='button' value='Click Me!' ng-click='alertMe()'>
+                <ul>
+                <li ng-repeat="rule in rules">
+                    {{ rule.name }}
+                    </li></ul>
+               <form name="myForm">
+    <label>
+      Enter text:
+      <input type="text" ng-model="field" name="myField" required minlength="5" />
+    </label>
+    <div ng-messages="myForm.myField.$error" role="alert">
+      <div ng-message="required">You did not enter a field</div>
+      <div ng-message="minlength, maxlength">
+        Your email must be between 5 and 100 characters long
+      </div>
+    </div>
+  </form>
+            </body></html>
